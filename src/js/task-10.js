@@ -9,15 +9,15 @@ const refs = {
   btnDestroy:document.querySelector('button[data-dectroy]'),
 }
 
-
+let dataInput = Number(refs.input.value);
 refs.btnCreate.addEventListener('click', onBtnCreateClick)
 function onBtnCreateClick() {
-  
-  const element = document.createElement('div');
-  
-    element.style.backgroundColor = getRandomHexColor();
-    element.style.width = '30px';
-    element.style.height = '30px';
-  refs.divBox.append(element);
-  
+refs.divBox.innerHTML='<; style="height:30px; width:30px;" class="item"'.repeat(dataInput);
+const item = document.querySelector('.item');
+item.style.backgroundColor = getRandomHexColor();
+
+}
+refs.btnDestroy.addEventListener('click', onBtnDestroyClick)
+function onBtnCreateClick() {
+refs.divBox.textContent='';
 }
