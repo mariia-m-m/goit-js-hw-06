@@ -9,14 +9,25 @@ const ingredients = [
 
 const ulEl = document.querySelector('ul#ingredients');
  
-const elements = ingredients.map(ingredient => {
+const arr = [];
+for (let ingredient of ingredients) {
   const ingredientEl = document.createElement('li');
-  ingredientEl.textContent = `${ingredient}`;
+  ingredientEl.textContent = ingredient;
   ingredientEl.classList.add('item');
-  return ingredientEl;
-}
-)
+  arr.push(ingredientEl)
+} 
+  ulEl.append(...arr);
 
-  ulEl.append(...elements);
+
+
+// Другий варіант
+// const elements = ingredients.map(ingredient => {
+//   const ingredientEl = document.createElement('li');
+//   ingredientEl.textContent = `${ingredient}`;
+//   ingredientEl.classList.add('item');
+ 
+// }
+// )
+//   ulEl.append(...elements);
 
 
